@@ -9,13 +9,15 @@ def format_results(data):
         account_number = entry['account_number'].lower()
         balance = entry['balance']
         balance_lock = entry['balance_lock'].lower()
+        locked = entry['locked']
 
         if balance == 0:
             continue
 
         results[account_number] = {
             'balance': balance,
-            'balance_lock': balance_lock
+            'balance_lock': balance_lock,
+            'locked': locked
         }
 
     return results
